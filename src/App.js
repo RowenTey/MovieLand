@@ -5,7 +5,7 @@ import SearchIcon from './search.svg'
 
 // e62b4370
 
-const API_URL = 'http://www.omdbapi.com/?apikey=e62b4370';
+const API_URL = 'https://www.omdbapi.com/?apikey=e62b4370';
 
 const App = () => {
     const [movies, setMovies] = useState([]);
@@ -13,12 +13,9 @@ const App = () => {
     
     const searchMovies = async (title) => {
         const response = await fetch(`${API_URL}&s=${title}`);
-        
         const data = await response.json();
-        
         setMovies(data.Search);
     }
-    
     
     useEffect(() => {
         searchMovies("Avengers");
